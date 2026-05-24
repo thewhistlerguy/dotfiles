@@ -1,0 +1,16 @@
+[window]
+padding = { x = 12, y = 12 }
+dynamic_title = true
+
+# Opacity (0.0 is completely transparent, 1.0 is completely opaque)
+opacity = 0.75
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
