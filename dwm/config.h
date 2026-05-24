@@ -22,11 +22,6 @@ static const char *colors[][3]      = {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-/* Volume commands using a shell wrapper */
-#define UPVOL    "wpctl set-volume @DEFAULT_SINK@ 5%+"
-#define DOWNVOL  "wpctl set-volume @DEFAULT_SINK@ 5%-"
-#define MUTEVOL  "wpctl set-volume @DEFAULT_SINK@ toggle"
-
 /* Brightness commands */
 static const char *brightup[]   = { "/usr/bin/brightnessctl", "set", "10%+", NULL };
 static const char *brightdown[] = { "/usr/bin/brightnessctl", "set", "10%-", NULL };
@@ -100,9 +95,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_plus,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_plus,  setgaps,        {.i =  0 } },
-	{ 0,				XF86XK_AudioRaiseVolume,  spawn,          SHCMD(UPVOL) },
-	{ 0,				XF86XK_AudioLowerVolume,  spawn,          SHCMD(DOWNVOL) },
-	{ 0,				XF86XK_AudioMute,         spawn,          SHCMD(MUTEVOL) },
 	{ 0,				XF86XK_MonBrightnessUp,   spawn,          {.v = brightup } },
 	{ 0,				XF86XK_MonBrightnessDown, spawn,          {.v = brightdown } },
 	TAGKEYS(                        XK_1,                      0)
